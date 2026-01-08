@@ -12,7 +12,6 @@ export class UsersService {
   ) {}
 
   async create(createUserDto: CreateUserDto): Promise<User> {
-    // CreateUserDto dan object yaratish
     const userData = {
       name: createUserDto.name,
       country: createUserDto.country,
@@ -44,7 +43,6 @@ export class UsersService {
   async update(id: number, updateUserDto: UpdateUserDto): Promise<User> {
     const user = await this.findOne(id);
     
-    // Yangilash ma'lumotlarini tayyorlash
     const updateData: any = {};
     
     if (updateUserDto.name !== undefined) {
